@@ -164,11 +164,7 @@ def implement_transfer(content_img, style_img, seg_mode = 'edge'):
     X = style_transfer(content, style, segm_mask)
     end = timer()
     print("Style Transfer took ", end - start, " seconds!")
-    # Finished. Just show the images
-    #show_images([original_content, segm_mask, style])
-    #show_images([X])
-    
-    #cv2.imwrite('./transfered_img/transfered.jpg',X)
+    # Finished. Just save the images
     plt.imshow(X)
     plt.savefig('./transfered_img/'+content_img[:-4]+'-'+style_img[:-4]+'_transfered.jpg')
     return 
